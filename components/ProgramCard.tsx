@@ -31,19 +31,15 @@ export const ProgramCard = ({
         height={400}
         alt={`Gambar dari program ${title}`}
       />
-      {/* : FIX disable state */}
-      <Button
-        variant={"default"}
-        disabled={!showMoreLink}
-        className={"py-6"}
-        asChild={!showMoreLink}
-      >
-        {showMoreLink ? (
+      {showMoreLink ? (
+        <Button variant="default" className="py-6" asChild>
           <Link href={customeUrl || `/programs/${id}`}>Selengkapnya</Link>
-        ) : (
+        </Button>
+      ) : (
+        <Button variant="default" className="py-6" disabled>
           <span>Selengkapnya</span>
-        )}
-      </Button>
+        </Button>
+      )}
     </div>
   );
 };
